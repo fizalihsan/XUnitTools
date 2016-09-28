@@ -10,21 +10,8 @@ repositories {
     mavenCentral()
 }
 
-sourceSets {
-    main {
-        resources {
-            srcDir '/src/main/database'
-//            srcDir '/src/main/resources'
-        }
-    }
-//    test {
-//        resources {
-//            srcDir '/src/test/resources'
-//        }
-//    }
-}
-
-//test.testLogging.showStandardStreams = true
+//to display log messages in Travis CI build logs
+test.testLogging.showStandardStreams = true
 
 
 final def SPOCK_VER = "1.0-groovy-2.4"
@@ -55,6 +42,4 @@ dependencies {
 
     compile "org.codehaus.groovy:groovy-all:2.3.11"
     testCompile "junit:junit:4.12"
-
-    runtime files('/src/main/database')
 }
