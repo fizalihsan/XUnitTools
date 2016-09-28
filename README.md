@@ -72,3 +72,12 @@ Ask any developer and they will tell you this: writing DB unit test is not easy.
 * Order of the tables
 * Fresh fixture model
 * Sharing test data
+* Supported in JUnit and Spock
+
+## Installation
+
+Download and compile using gradle `gradle clean build` to get the jar file.
+
+## Tests
+
+To demonstrate how this framework works, I have provided demo classes in this source code. Try executing `DemoDaoTest.java` (JUnit) or `DemoDaoSpec.groovy` (Spock)
