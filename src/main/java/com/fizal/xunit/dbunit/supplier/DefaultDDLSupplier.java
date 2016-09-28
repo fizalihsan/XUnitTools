@@ -29,7 +29,7 @@ public class DefaultDDLSupplier implements DDLSupplier {
             sql = readFileToString(getDDLFile(table), Charset.defaultCharset());
             LOGGER.debug("DDL for {} = \n\n{}\n\n", table, sql);
         } catch (Exception e) {
-            LOGGER.error("Error reading DDL for table : {}", table);
+            LOGGER.error("Error reading DDL for table : {}", table, e);
             throw new DDLNotFoundException("Error reading DDL for table: " + table, e);
         }
         return sql;
