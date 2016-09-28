@@ -1,5 +1,7 @@
 # XUnitTools
 
+![](https://travis-ci.org/fizalihsan/XUnitTools.svg)
+
 ## Synopsis
 
 This is a simple framework that makes writing DB unit tests easy and fun.
