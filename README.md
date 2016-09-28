@@ -25,6 +25,8 @@ If the data file is not found there, then it searches for any common data files 
 **JUnit Example**
 
 ```java
+@ContextConfiguration(locations = {"classpath*:applicationContext*.xml"})
+@RunWith(SpringJUnit4ClassRunner.class)
 package com.fizal.dao;
 
 public class DemoDaoTest extends AbstractUnitTest {
