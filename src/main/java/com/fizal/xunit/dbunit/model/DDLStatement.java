@@ -1,7 +1,8 @@
 package com.fizal.xunit.dbunit.model;
 
 import com.fizal.xunit.dbunit.util.StringUtil;
-import com.google.common.base.Optional;
+
+import java.util.Optional;
 
 /**
  * Created by fmohamed on 9/16/2016.

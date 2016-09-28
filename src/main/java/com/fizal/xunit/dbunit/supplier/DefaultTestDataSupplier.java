@@ -1,4 +1,4 @@
-package com.fizal.xunit.dbunit.provider;
+package com.fizal.xunit.dbunit.supplier;
 
 import com.fizal.xunit.dbunit.exception.DDLNotFoundException;
 import com.fizal.xunit.dbunit.exception.InvalidTestDataFileException;
@@ -25,9 +25,9 @@ import static org.springframework.util.StringUtils.isEmpty;
  * Created by fmohamed on 9/13/2016.
  */
 @Component
-public class DefaultTestDataProvider implements TestDataProvider {
+public class DefaultTestDataSupplier implements TestDataSupplier {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(DefaultDDLProvider.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(DefaultDDLSupplier.class);
 
     public List<String> insertStatement(TestMethodConfig testMethodConfig, String table) {
         try {

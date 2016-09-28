@@ -1,4 +1,4 @@
-package com.fizal.xunit.dbunit.provider;
+package com.fizal.xunit.dbunit.supplier;
 
 import com.fizal.xunit.dbunit.exception.DDLNotFoundException;
 import com.fizal.xunit.dbunit.util.StringUtil;
@@ -19,9 +19,9 @@ import static org.apache.commons.io.FileUtils.readFileToString;
  * Created by fmohamed on 9/13/2016.
  */
 @Component
-public class DefaultDDLProvider implements DDLProvider {
+public class DefaultDDLSupplier implements DDLSupplier {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(DefaultDDLProvider.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(DefaultDDLSupplier.class);
 
     public String getDDLStatement(String table) {
         String sql;

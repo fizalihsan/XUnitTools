@@ -1,8 +1,8 @@
-package com.fizal.xunit.dbunit.provider;
+package com.fizal.xunit.dbunit.supplier;
 
 /**
  * Created by fmohamed on 9/13/2016.
  */
-public interface DDLProvider {
+public interface DDLSupplier {
     String getDDLStatement(String dbObjectName);
 }

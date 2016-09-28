@@ -13,14 +13,8 @@ import static org.springframework.util.StringUtils.isEmpty;
 public final class StringUtil {
 
     public static final Set<String> tokenize(String line) {
-        String[] strings = line.split(" ");
-
-        Set<String> set = new HashSet<>();
-
-        for (String string : strings) {
-            set.add(string);
-        }
-
+        Set<String> set = new LinkedHashSet<>();
+        Collections.addAll(set, line.split(" "));
         return set;
     }
 

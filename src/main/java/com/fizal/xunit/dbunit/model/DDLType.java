@@ -1,7 +1,8 @@
 package com.fizal.xunit.dbunit.model;
 
-import com.google.common.base.Optional;
 import org.springframework.util.StringUtils;
+
+import java.util.Optional;
 
 /**
  * Created by fmohamed on 9/13/2016.
@@ -25,7 +26,7 @@ public enum DDLType {
 
     public static Optional<DDLType> getDDLType(String ddl) {
         if (StringUtils.isEmpty(ddl)) {
-            return Optional.absent();
+            return Optional.empty();
         }
 
         for (DDLType commandType : values()) {
@@ -34,6 +35,6 @@ public enum DDLType {
             }
         }
 
-        return Optional.absent();
+        return Optional.empty();
     }
 }

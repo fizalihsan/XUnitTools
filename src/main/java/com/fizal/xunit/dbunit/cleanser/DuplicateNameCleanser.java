@@ -1,10 +1,10 @@
 package com.fizal.xunit.dbunit.cleanser;
 
 import com.fizal.xunit.dbunit.model.DDLType;
-import com.google.common.base.Optional;
 
 import java.util.Date;
 import java.util.EnumSet;
+import java.util.Optional;
 
 import static com.fizal.xunit.dbunit.model.DDLType.*;
 import static com.fizal.xunit.dbunit.util.StringUtil.getIndexOrConstraintName;

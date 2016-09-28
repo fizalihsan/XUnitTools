@@ -5,8 +5,8 @@ import com.fizal.xunit.dbunit.cleanser.ColumnDefDDLCleanser;
 import com.fizal.xunit.dbunit.cleanser.DDLCleanser;
 import com.fizal.xunit.dbunit.cleanser.DuplicateNameCleanser;
 import com.fizal.xunit.dbunit.model.TestMethodConfig;
-import com.fizal.xunit.dbunit.provider.DDLProvider;
-import com.fizal.xunit.dbunit.provider.TestDataProvider;
+import com.fizal.xunit.dbunit.supplier.DDLSupplier;
+import com.fizal.xunit.dbunit.supplier.TestDataSupplier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -26,9 +26,9 @@ public class DBUnitBootStrapService {
     @Autowired
     private DatabaseService dbService;
     @Autowired
-    private DDLProvider ddlProvider;
+    private DDLSupplier ddlSupplier;
     @Autowired
-    private TestDataProvider testDataProvider;
+    private TestDataSupplier testDataSupplier;
 
     private static final DDLCleanser[] DDL_CLEANSERS = new DDLCleanser[]{
             new AdminKeywordsDDLCleanser(),
@@ -46,7 +46,7 @@ public class DBUnitBootStrapService {
 
         for (String table : sort(testMethodConfig.getTableNames())) {
             //3. Get DDL for the table
-            String ddlStatement = ddlProvider.getDDLStatement(table);
+            String ddlStatement = ddlSupplier.getDDLStatement(table);
 
             //4. Cleanse DDL
             List<String> ddlCommands = splitAndCleanse(ddlStatement);
@@ -57,7 +57,7 @@ public class DBUnitBootStrapService {
             }
 
             //6. Load table with test data
-            List<String> insertSqls = testDataProvider.insertStatement(testMethodConfig, table);
+            List<String> insertSqls = testDataSupplier.insertStatement(testMethodConfig, table);
 
             for (String sql : insertSqls) {
                 dbService.execute(sql);
