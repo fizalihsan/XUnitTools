@@ -36,7 +36,7 @@ public class DefaultDDLSupplier implements DDLSupplier {
     }
 
     protected File getDDLFile(String table) {
-        String ddlFilePath = StringUtil.join("/tables/", getSchema(table), separator, table, ".sql");
+        String ddlFilePath = StringUtil.join("/database/tables/", getSchema(table), separator, table, ".sql");
         Resource resource = new ClassPathResource(ddlFilePath);
 
         if (resource.exists()) {
