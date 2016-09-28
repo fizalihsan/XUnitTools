@@ -24,7 +24,7 @@ sourceSets {
     }
 }
 
-//test.testLogging.showStandardStreams = true
+test.testLogging.showStandardStreams = true
 
 
 final def SPOCK_VER = "1.0-groovy-2.4"
