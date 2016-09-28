@@ -1,0 +1,6 @@
+LINK_RSRC_ID, BEHAVIOR_CD, CRT_TS, CRT_USR, GROUP_NM, INCLUSIVE_FLG, LABEL_KEY, LEVEL_0_SORT_NBR, LEVEL_1_DESC, LEVEL_1_SORT_NBR, LEVEL_2_DESC, LEVEL_2_SORT_NBR, LINK_URI_ADDR, MDY_TS, MDY_USR, MENU_FLAG, RSRC_ID
+1184, 'O', '2014-04-17 12:06:05.192664', 'MSUN', '', 'A', 'icd_link_vc_setup', 10, 'manage', 1, '', 1, '/cardorder/init?setup=T', '2014-04-17 12:06:05.192664', 'MSUN', 'Y', 'WEB-ICD-VCARD-SETUP'
+10000, 'O', '2015-07-19 21:23:57.926296', 'MSUN', '', 'N', 'icd_link_card_order_desc', 10, 'manage', 2, '', 0, '/cardorder/init', '2016-08-29 04:46:28.326524', 'EXTHCHANDA', 'Y', 'WEB-ICD-CMAS-CARD'
+9999, 'O', '2014-02-20 09:59:46.0', 'MSUN', 'CARDMNT', 'N', 'icd_link_card_order_desc', 10, 'manage', 2, '', 0, '/cardorder/init', '2016-08-29 04:46:28.326524', 'EXTHCHANDA', 'Y', 'WEB-ICD-VCARD'
+1064, '', '2012-12-23 09:59:46.0', 'PIACARELLA', '', 'A', 'icd_link_card_mnt_cms', 10, 'manage', 2, 'cards', 5, '/blam/Controller?XFunction=CardMaintenance', '2012-12-23 09:59:46.0', 'PIACARELLA', 'Y', 'WEB-ICD-CMAS-CARD'
+1053, 'T', '2012-12-23 09:59:46.0', 'PIACARELLA', 'GENERAL', 'Y', 'icd_link_reportq_rptlist', 10, '', 10, '', 0, '/ReportQ/Controller?XFunction=ReportQInit', '2012-12-23 09:59:46.0', 'PIACARELLA', 'Y', 'WEB-ICD-RPBD'

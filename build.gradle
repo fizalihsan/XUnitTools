@@ -1,0 +1,50 @@
+group 'com.fizal'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDir '/src/main/database'
+        }
+    }
+}
+
+
+final def SPOCK_VER = "1.0-groovy-2.4"
+final def SPRING_VER = "4.0.4.RELEASE"
+final def DB2_VER = "4.0.4.RELEASE"
+
+dependencies {
+    compile "com.h2database:h2:1.4.192"
+
+    compile "org.spockframework:spock-core:${SPOCK_VER}"
+    compile "org.spockframework:spock-spring:${SPOCK_VER}"
+
+    // Spring
+    compile "org.springframework:spring-jms:${SPRING_VER}"
+    compile "org.springframework:spring-jdbc:${SPRING_VER}"
+    compile "org.springframework:spring-test:${SPRING_VER}"
+
+    // Command-line processor
+    compile "com.beust:jcommander:1.48"
+
+    // Utilities
+    compile "commons-io:commons-io:2.5"
+    compile "com.google.guava:guava:19.0"
+
+    // Logging
+    compile "org.slf4j:slf4j-api:1.7.1"
+    compile "org.slf4j:slf4j-log4j12:1.7.0"
+
+    compile "org.codehaus.groovy:groovy-all:2.3.11"
+    testCompile "junit:junit:4.12"
+}
