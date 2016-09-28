@@ -23,7 +23,7 @@ public class DefaultDDLSupplier implements DDLSupplier {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DefaultDDLSupplier.class);
 
-    public String getDDLStatement(String table) {
+    public String getDDL(String table) {
         String sql;
         try {
             sql = readFileToString(getDDLFile(table), Charset.defaultCharset());

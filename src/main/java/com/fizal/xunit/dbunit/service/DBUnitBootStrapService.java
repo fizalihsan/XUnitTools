@@ -46,7 +46,7 @@ public class DBUnitBootStrapService {
 
         for (String table : sort(testMethodConfig.getTableNames())) {
             //3. Get DDL for the table
-            String ddlStatement = ddlSupplier.getDDLStatement(table);
+            String ddlStatement = ddlSupplier.getDDL(table);
 
             //4. Cleanse DDL
             List<String> ddlCommands = splitAndCleanse(ddlStatement);

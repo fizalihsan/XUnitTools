@@ -4,7 +4,10 @@ import com.fizal.xunit.dbunit.model.Table;
 import com.fizal.xunit.dbunit.supplier.DDLSupplier;
 import com.fizal.xunit.dbunit.supplier.DefaultDDLSupplier;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static java.util.stream.Collectors.toList;
 
@@ -18,7 +21,7 @@ public final class TableDeployOrderSorter {
         Map<String, Table> tables = new HashMap<>();
 
         for (String tableName : tableNames) {
-            String ddlStatement = DDL_PROVIDER.getDDLStatement(tableName);
+            String ddlStatement = DDL_PROVIDER.getDDL(tableName);
 
             Table table = new Table(tableName);
 
@@ -42,10 +45,7 @@ public final class TableDeployOrderSorter {
             }
         }
 
-        List<Table> sortedTables = new ArrayList<>(tables.values());
-//        Collections.sort(sortedTables);
-
-        return sortedTables
+        return tables.values()
                 .stream()
                 .sorted()
                 .map(Table::getName)
