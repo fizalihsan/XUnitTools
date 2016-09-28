@@ -71,10 +71,11 @@ Ask any developer and they will tell you this: writing DB unit test is not easy.
 
 * Uses H2 in-memory DB
 * Convention-over-configuration
-* Order of the tables
+* Order of the tables is automatically sorted
 * Fresh fixture model
 * Sharing test data
 * Supported in JUnit and Spock
+* Tool to generate test data files from SQLs
 
 ## Installation
 
