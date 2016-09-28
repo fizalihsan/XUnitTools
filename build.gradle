@@ -14,9 +14,17 @@ sourceSets {
     main {
         resources {
             srcDir '/src/main/database'
+            srcDir '/src/main/resources'
+        }
+    }
+    test {
+        resources {
+            srcDir '/src/test/resources'
         }
     }
 }
+
+//test.testLogging.showStandardStreams = true
 
 
 final def SPOCK_VER = "1.0-groovy-2.4"
