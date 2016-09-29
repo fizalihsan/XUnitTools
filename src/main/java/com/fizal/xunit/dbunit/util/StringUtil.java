@@ -3,9 +3,9 @@ package com.fizal.xunit.dbunit.util;
 import com.fizal.xunit.dbunit.model.DDLType;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static org.springframework.util.StringUtils.collectionToDelimitedString;
-import static org.springframework.util.StringUtils.isEmpty;
 
 /**
  * Created by fmohamed on 9/15/2016.
@@ -42,31 +42,14 @@ public final class StringUtil {
         return ddl.substring(0, i + 1);
     }
 
-    public static final String join(String... strings) {
-        StringBuilder builder = new StringBuilder();
-
-        for (String string : strings) {
-            builder.append(string);
-        }
-
-        return builder.toString();
+    public static List<String> splitCommands(String sql) {
+        return Arrays.stream(sql.split(";"))
+                .map(String::trim)
+                .filter(x -> !x.isEmpty())
+                .collect(Collectors.toList());
     }
 
-    public static final List<String> splitCommands(String sql) {
-        String[] split = sql.split(";");
-
-        List<String> commands = new LinkedList<>();
-        for (String command : split) {
-            command = command.trim();
-            if (!isEmpty(command)) {
-                commands.add(command);
-            }
-        }
-
-        return commands;
-    }
-
-    public static final String mergeCommands(List<String> commands) {
+    public static String mergeCommands(List<String> commands) {
         String mergedCommands = collectionToDelimitedString(commands, ";\n\n");
 
         if (!mergedCommands.endsWith(";")) {
@@ -143,6 +126,7 @@ public final class StringUtil {
 
     protected static List<Integer> getQuotePositions(String line) {
         List<Integer> indices = new ArrayList<>();
+
         char[] chars = line.toCharArray();
 
         for (int i = 0; i < chars.length; i++) {

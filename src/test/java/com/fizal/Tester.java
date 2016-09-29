@@ -1,29 +1,12 @@
 package com.fizal;
 
-import com.fizal.xunit.dbunit.util.StringUtil;
-
 /**
  * Created by fmohamed on 9/12/2016.
  */
 public class Tester {
 
     public static void main(String[] a) throws Exception {
-        String ddl = "CREATE INDEX \"DBO\".\"XSCRLS07\"\n" +
-                "\tON \"DBO\".\"CRD_LSTG\"\n" +
-                "\t(\"CRD_NBR\", \n" +
-                "\t  \"CRD_EMP_ID\", \n" +
-                "\t  SUBSTR(CRD_NBR,12,5))\n" +
-                "\tNOT CLUSTER\n" +
-                "\tPADDED\n" +
-                "\tUSING STOGROUP SGCD0001\n" +
-                "\t  PRIQTY -1\n" +
-                "\t  SECQTY -1\n" +
-                "\tPCTFREE 5\n" +
-                "\tBUFFERPOOL BP7     \n" +
-                "\tPIECESIZE 2097152 K;";
-        String s = StringUtil.extractObjectDef(ddl);
-
-        System.out.println(s);
+        System.out.println(String.join("", "a", "b", "c"));
     }
 
     /*private static void testH2() {

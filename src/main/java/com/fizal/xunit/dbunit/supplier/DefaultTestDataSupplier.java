@@ -15,8 +15,8 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import static com.fizal.xunit.dbunit.util.StringUtil.join;
 import static java.io.File.separator;
+import static java.lang.String.join;
 import static java.nio.charset.Charset.defaultCharset;
 import static org.apache.commons.io.FileUtils.readFileToString;
 import static org.springframework.util.StringUtils.isEmpty;
@@ -55,14 +55,14 @@ public class DefaultTestDataSupplier implements TestDataSupplier {
             dataSetName = testMethodConfig.getTestMethodName();
         }
 
-        String csvFilePath = join("/testdata/", testClassName, separator, dataSetName, separator, table, ".csv");
+        String csvFilePath = join("", "/testdata/", testClassName, separator, dataSetName, separator, table, ".csv");
         File csvFile = getFile(csvFilePath);
 
         if (csvFile == null) {
             //If no data file found under /<class>/<method> directory, then
             //check if a common data file exists for this table
 
-            csvFilePath = join("/testdata/", table, ".csv");
+            csvFilePath = join("", "/testdata/", table, ".csv");
             csvFile = getFile(csvFilePath);
         }
 
@@ -102,7 +102,7 @@ public class DefaultTestDataSupplier implements TestDataSupplier {
                 //this is a comment line. Skip it.
                 continue;
             }
-            String sql = join("INSERT INTO ", table, " (", columnNames, ") VALUES(", csvLines[i], "); \n");
+            String sql = join("", "INSERT INTO ", table, " (", columnNames, ") VALUES(", csvLines[i], "); \n");
             sqls.add(sql);
         }
         return sqls;

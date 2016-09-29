@@ -1,4 +1,4 @@
-package com.fizal.xunit.dbunit.printer;
+package com.fizal.xunit.dbunit.model;
 
 import org.springframework.format.Printer;
 

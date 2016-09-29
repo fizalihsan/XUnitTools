@@ -1,7 +1,6 @@
 package com.fizal.xunit.dbunit.supplier;
 
 import com.fizal.xunit.dbunit.exception.DDLNotFoundException;
-import com.fizal.xunit.dbunit.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
@@ -13,6 +12,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 
 import static java.io.File.separator;
+import static java.lang.String.join;
 import static org.apache.commons.io.FileUtils.readFileToString;
 
 /**
@@ -36,7 +36,7 @@ public class DefaultDDLSupplier implements DDLSupplier {
     }
 
     protected File getDDLFile(String table) {
-        String ddlFilePath = StringUtil.join("/database/tables/", getSchema(table), separator, table, ".sql");
+        String ddlFilePath = join("", "/database/tables/", getSchema(table), separator, table, ".sql");
         Resource resource = new ClassPathResource(ddlFilePath);
 
         if (resource.exists()) {

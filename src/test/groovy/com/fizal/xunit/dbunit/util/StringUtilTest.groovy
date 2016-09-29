@@ -1,6 +1,7 @@
 package com.fizal.xunit.dbunit.util
 
 import spock.lang.Specification
+import spock.lang.Unroll
 
 /**
  * Comment here about the class
@@ -8,6 +9,7 @@ import spock.lang.Specification
  * Date: 9/27/2016
  * Time: 8:56 PM
  */
+@Unroll
 class StringUtilTest extends Specification {
 
     def "tokenize - empty string"() {
@@ -46,4 +48,29 @@ class StringUtilTest extends Specification {
         output.size() == 1
         output[0] == 'abc\nbcd'
     }
+
+    def "splitCommands"() {
+        expect:
+        StringUtil.splitCommands(input) == output
+
+        where:
+        input   | output
+        ""      | []
+        "A"     | ["A"]
+        "A;B"   | ["A", "B"]
+        "A ; B" | ["A", "B"]
+    }
+
+    def "getQuotePositions"() {
+        expect:
+        StringUtil.getQuotePositions(input) == output
+
+        where:
+        input          | output
+        ""             | []
+        "\"\""         | [0, 1]
+        "\"A\""        | [0, 2]
+        "\"A\", \"B\"" | [0, 2, 5, 7]
+    }
+
 }
